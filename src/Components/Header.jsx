@@ -1,13 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Container, Navbar } from 'react-bootstrap'
 import { Link, useNavigate } from 'react-router-dom'
 
+
 function Header({insideDashbord}) {
   const navigate = useNavigate()
+  
   const handleLogout = ()=>{
     sessionStorage.removeItem("token")
     localStorage.removeItem("existingUser")
-    localStorage.removeItem("Role")
+   
     navigate('/')
   }
   return (

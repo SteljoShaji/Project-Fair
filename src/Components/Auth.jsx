@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React, {  useState } from 'react'
 import { Button, Form } from 'react-bootstrap'
 import { Link, useNavigate,  } from 'react-router-dom'
 import { loginAPI, registerAPI } from '../services/allApi'
 import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
+
 
 
 
@@ -52,8 +53,8 @@ function Auth({register}) {
              //save res
              
              localStorage.setItem("existingUser",JSON.stringify(res.data.existingUser))
-             localStorage.setItem("Role",res.data.role)
              sessionStorage.setItem("token",res.data.token)
+           
              //reset state
              setUserData({
               email:"",password:""
